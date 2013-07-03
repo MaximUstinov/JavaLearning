@@ -22,4 +22,14 @@ public interface Ship {
 	 */
 	public Direction getDirection();
 	
+	/**
+	 * Нанести удар по кораблю
+	 */
+	public void hit();
+	
+	/**
+	 * Возвращает состояние корабля - потоплен или нет
+	 * @return состояние корабля
+	 */
+	public boolean isAlive();
 }

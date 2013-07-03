@@ -14,7 +14,7 @@ public class GameImpl implements Game {
 	private Map<Player, Field> fields;
 	
 	@Override
-	public void init(String[] players, int fieldWidth, int fieldHeight) throws IllegalArgumentException {
+	public void init(String[] players, int fieldWidth, int fieldHeight) throws IllegalArgumentException, WrongArgumentException {
 		if(players == null || players.length < 2 || fieldWidth < 5 || fieldHeight < 5 || fieldWidth > 15 || fieldHeight > 15){
 			throw new IllegalArgumentException("check input arguments: \n");
 		}
@@ -36,7 +36,7 @@ public class GameImpl implements Game {
 		}
 	}
 	
-	private void initFields(int width, int height){
+	private void initFields(int width, int height) throws WrongArgumentException{
 		for(Player player: players){
 			fields.put(player, new FieldImpl(width, height));
 		}

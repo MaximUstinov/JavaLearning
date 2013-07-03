@@ -1,7 +1,9 @@
 package com.maximustinov.seabattle;
 
+import com.maximustinov.seabattle.basic.WrongArgumentException;
+
 public interface Game {
-	public void init(String[] players, int fieldWidth, int fieldHeight);
+	public void init(String[] players, int fieldWidth, int fieldHeight) throws IllegalArgumentException, WrongArgumentException;
 	
 	/**
 	 * Добавить корабль на поле

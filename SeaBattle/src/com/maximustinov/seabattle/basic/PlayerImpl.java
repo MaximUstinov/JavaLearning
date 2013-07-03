@@ -5,6 +5,12 @@ import com.maximustinov.seabattle.Player;
 public class PlayerImpl implements Player {
 	private String name;
 	private int rating = 0;
+	private int plays = 0;
+
+	public PlayerImpl(String name, int rating){
+		this(name);
+		this.rating = rating;
+	}
 	
 	public PlayerImpl(String name) {
 		this.name = name;
@@ -31,9 +37,14 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public void setRating(int value) {
-		this.rating = rating;
+		this.rating = value;
 	}
 
+	@Override
+	public String toString() {
+		return name + ":rating=" + getRating();
+	}
+	
 	@Override
 	public String getRating() {
 		return String.valueOf(rating);
